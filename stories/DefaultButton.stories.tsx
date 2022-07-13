@@ -1,6 +1,6 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { withKnobs, text, radios } from "@storybook/addon-knobs";
+import { withKnobs, text, radios, select } from "@storybook/addon-knobs";
 
 import { DefaultButton } from "../components/DefalutButton";
 
@@ -14,12 +14,26 @@ export default {
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 export const Template: ComponentStory<typeof DefaultButton> = (args) => (
-  <DefaultButton label={text("label", "ボタン")} onClick={() => {}} />
+  <DefaultButton {...args} label={text("label", "ボタン")} onClick={() => {}} />
 );
 
 export const Template2: ComponentStory<typeof DefaultButton> = (args) => (
   <DefaultButton
+    {...args}
     label={radios("label", { a: "ボタン", b: "button", c: "ぼたん" }, "ボタン")}
+    backgroundColor={select(
+      "backgroundcolor",
+      {
+        red: "red",
+        blue: "blue",
+        yellow: "yellow",
+      },
+      "green"
+    )}
     onClick={() => {}}
   />
 );
+
+Template2.argTypes = {
+  backgroundColor: { color: "color" },
+};

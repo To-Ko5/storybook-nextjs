@@ -5,7 +5,7 @@ type Props = {
   backgroundColor: string
 }
 
-export const Header: FC<Props> = ({ backgroundColor }) => {
+export const Header: FC<Props> = ({ backgroundColor = '#ededed' }) => {
   const onClick = () => {
     console.log('click')
   }
@@ -13,13 +13,15 @@ export const Header: FC<Props> = ({ backgroundColor }) => {
     backgroundColor,
     padding: '8px',
     display: 'flex',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    alignItems: 'center'
   }
   return (
     <header style={style}>
       <p>Logo</p>
-
-      <DefaultButton label="red" onClick={() => onClick} />
+      <div>
+        <DefaultButton label="red" onClick={() => onClick} />
+      </div>
     </header>
   )
 }

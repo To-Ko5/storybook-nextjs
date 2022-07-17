@@ -2,7 +2,7 @@ import { FC, CSSProperties } from 'react'
 import { DefaultButton } from './DefalutButton'
 
 type Props = {
-  backgroundColor: string
+  backgroundColor?: string
 }
 
 export const Header: FC<Props> = ({ backgroundColor = '#ededed' }) => {

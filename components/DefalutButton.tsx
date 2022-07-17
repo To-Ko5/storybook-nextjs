@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, CSSProperties } from 'react'
 
 type Props = {
   label: string
@@ -10,10 +10,11 @@ export const DefaultButton: FC<Props> = ({
   backgroundColor,
   onClick
 }) => {
-  const style = {
+  const style: CSSProperties = {
     color: 'black',
     padding: '8px',
-    borderRadious: '16px',
+    border: 'none',
+    borderRadius: '4px',
     backgroundColor: backgroundColor ? backgroundColor : '#ededed'
   }
   return (

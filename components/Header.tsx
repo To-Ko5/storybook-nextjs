@@ -11,16 +11,23 @@ export const Header: FC<Props> = ({ backgroundColor = '#ededed' }) => {
   }
   const style: CSSProperties = {
     backgroundColor,
-    padding: '8px',
+    padding: '8px'
+  }
+  const containerStyle: CSSProperties = {
+    maxWidth: '980px',
+    margin: '0 auto',
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center'
   }
+
   return (
     <header style={style}>
-      <p>Logo</p>
-      <div>
-        <DefaultButton label="button" onClick={() => onClick} />
+      <div style={containerStyle}>
+        <p>Logo</p>
+        <div>
+          <DefaultButton label="button" onClick={() => onClick} />
+        </div>
       </div>
     </header>
   )

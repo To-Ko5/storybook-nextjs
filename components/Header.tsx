@@ -20,7 +20,7 @@ export const Header: FC<Props> = ({ backgroundColor = '#ededed' }) => {
     <header style={style}>
       <p>Logo</p>
       <div>
-        <DefaultButton label="red" onClick={() => onClick} />
+        <DefaultButton label="button" onClick={() => onClick} />
       </div>
     </header>
   )

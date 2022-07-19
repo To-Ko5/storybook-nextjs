@@ -21,19 +21,13 @@ export const Template2: ComponentStory<typeof DefaultButton> = (args) => (
   <DefaultButton
     {...args}
     label={radios('label', { a: 'ボタン', b: 'button', c: 'ぼたん' }, 'ボタン')}
-    backgroundColor={select(
-      'backgroundcolor',
-      {
-        red: 'red',
-        blue: 'blue',
-        yellow: 'yellow'
-      },
-      'green'
-    )}
     onClick={() => {}}
   />
 )
 
 Template2.argTypes = {
-  backgroundColor: { color: 'color' }
+  backgroundColor: { color: 'color' },
+  padding: {
+    control: { type: 'range', min: 4, max: 40, step: 1 }
+  }
 }

@@ -14,18 +14,19 @@ export default {
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 export const Template: ComponentStory<typeof DefaultButton> = (args) => (
-  <DefaultButton {...args} label={text('label', 'ボタン')} onClick={() => {}} />
+  <DefaultButton {...args} onClick={() => {}} />
 )
 
 export const Template2: ComponentStory<typeof DefaultButton> = (args) => (
-  <DefaultButton
-    {...args}
-    label={radios('label', { a: 'ボタン', b: 'button', c: 'ぼたん' }, 'ボタン')}
-    onClick={() => {}}
-  />
+  <DefaultButton {...args} onClick={() => {}} />
 )
 
+Template.argTypes = {
+  label: { control: 'text' }
+}
+
 Template2.argTypes = {
+  label: { control: 'radio', options: ['ボタン', 'button', 'ぼたん'] },
   backgroundColor: { color: 'color' },
   padding: {
     control: { type: 'range', min: 4, max: 40, step: 1 }

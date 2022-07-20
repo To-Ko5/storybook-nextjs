@@ -7,7 +7,7 @@ type Props = {
   onClick: () => void
 }
 export const DefaultButton: FC<Props> = ({
-  label,
+  label = 'ボタン',
   backgroundColor,
   padding = 8,
   onClick

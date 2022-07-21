@@ -17,5 +17,8 @@ export const Template: ComponentStory<typeof Header> = (args) => (
 )
 
 Template.argTypes = {
-  backgroundColor: { color: 'color' }
+  backgroundColor: { color: 'color' },
+  padding: {
+    control: { type: 'range', min: 4, max: 40, step: 1 }
+  }
 }

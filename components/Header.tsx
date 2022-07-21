@@ -3,15 +3,19 @@ import { DefaultButton } from './DefalutButton'
 
 type Props = {
   backgroundColor?: string
+  padding?: number
 }
 
-export const Header: FC<Props> = ({ backgroundColor = '#ededed' }) => {
+export const Header: FC<Props> = ({
+  backgroundColor = '#ededed',
+  padding = 8
+}) => {
   const onClick = () => {
     console.log('click')
   }
   const style: CSSProperties = {
     backgroundColor,
-    padding: '8px'
+    padding: `${padding}px`
   }
   const containerStyle: CSSProperties = {
     maxWidth: '980px',
